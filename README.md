@@ -10,16 +10,30 @@ Ce projet implémente une version automatisée du jeu **Quixo**, où le joueur h
 
 ## Installation
 
-1. **Cloner le Dépôt** :
-   Exécutez cette commande pour cloner le dépôt et naviguer dans le dossier du projet :
-   ```bash
-   git clone https://github.com/Form4/Quixo-Project.git
-   cd Quixo-Project
+### 1. Cloner le Dépôt
+Exécutez cette commande pour cloner le dépôt et naviguer dans le dossier du projet :
+```bash
+git clone https://github.com/Form4/Quixo-Project.git
+cd Quixo-Project
+
 
 pip install requests
 
+
+
 git add main.py quixo.py api.py
-git commit -m ""[Uplfrom quixo import formater_le_jeu, choisir_un_coup, interpréter_la_commande
+git commit -m ''C:\Users\Félix-Olivier\Desktop\Quixo-Project\api.py,C:\Users\Félix-Olivier\Desktop\Quixo-Project\main.py,C:\Users\Félix-Olivier\Desktop\Quixo-Project\quixo.py''
+
+git push origin main
+
+git bundle create quixo_project.bundle --all
+
+
+
+## Code du Projet
+## main.py
+
+from quixo import formater_le_jeu, choisir_un_coup, interpréter_la_commande
 from api import initialiser_partie, jouer_un_coup
 
 if __name__ == "__main__":
@@ -46,8 +60,11 @@ if __name__ == "__main__":
         print(f"Erreur de jeu : {e}")
     except ConnectionError as e:
         print(f"Erreur de connexion : {e}")
-import argparse
 
+
+## quixo.py
+
+import argparse
 
 def formater_entete(joueurs):
     return f"Légende:\n   X={joueurs[0]}\n   O={joueurs[1]}"
@@ -77,6 +94,10 @@ def interpréter_la_commande():
     parser = argparse.ArgumentParser(description="Quixo")
     parser.add_argument("idul", help="IDUL du joueur")
     return parser.parse_args()
+
+
+## api.py
+
 import requests
 
 def initialiser_partie(idul, secret):
@@ -105,14 +126,15 @@ def jouer_un_coup(id_partie, origine, direction, idul, secret):
     elif response.status_code == 406:
         raise RuntimeError(response.json()['message'])
     else:
-        raise ConnectionError("Erreur de connexion.")oading main.py…]()
-
-
-        git push origin main
+        raise ConnectionError("Erreur de connexion.")
 
 
 
-git bundle create quixo_project.bundle --all
+
+
+
+
+
 
 
 
