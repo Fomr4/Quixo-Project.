@@ -12,3 +12,13 @@ Ce projet implémente une version automatisée du jeu **Quixo**, où le joueur h
 1. **Cloner le Dépôt** :
    ```bash
    git clone <URL_du_dépôt>
+   
+git add main.py quixo.py api.py
+
+git commit -m "Ajout des fichiers principaux pour le projet Quixo"
+
+git push origin main
+
+git bundle create quixo_project.bundle --all
+
+
