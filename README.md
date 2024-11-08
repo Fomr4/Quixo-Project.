@@ -20,8 +20,16 @@ pip install requests
 
 git add main.py quixo.py api.py
 
-git commit -m ""
-[Uploading main.py…]()from quixo import formater_le_jeu, choisir_un_coup, interpréter_la_commande
+git push origin main
+
+git bundle create quixo_project.bundle --all
+
+
+Code du Projet
+main.py
+python
+Copier le code
+from quixo import formater_le_jeu, choisir_un_coup, interpréter_la_commande
 from api import initialiser_partie, jouer_un_coup
 
 if __name__ == "__main__":
@@ -48,8 +56,10 @@ if __name__ == "__main__":
         print(f"Erreur de jeu : {e}")
     except ConnectionError as e:
         print(f"Erreur de connexion : {e}")
+quixo.py
+python
+Copier le code
 import argparse
-
 
 def formater_entete(joueurs):
     return f"Légende:\n   X={joueurs[0]}\n   O={joueurs[1]}"
@@ -79,6 +89,9 @@ def interpréter_la_commande():
     parser = argparse.ArgumentParser(description="Quixo")
     parser.add_argument("idul", help="IDUL du joueur")
     return parser.parse_args()
+api.py
+python
+Copier le code
 import requests
 
 def initialiser_partie(idul, secret):
@@ -109,9 +122,6 @@ def jouer_un_coup(id_partie, origine, direction, idul, secret):
     else:
         raise ConnectionError("Erreur de connexion.")
 
-git push origin main
-
-git bundle create quixo_project.bundle --all
 
 
 
