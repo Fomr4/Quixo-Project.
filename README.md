@@ -11,7 +11,7 @@ Ce projet implémente une version automatisée du jeu **Quixo**, où le joueur h
 ## Installation
 1. **Cloner le Dépôt** :
    ```bash
-   git clone <URL_du_dépôt>
+   git clone https://github.com/Fomr4/Quixo-Project..git
    
 git add main.py quixo.py api.py
 
