@@ -4,9 +4,9 @@
 Ce projet implémente une version automatisée du jeu **Quixo**, où le joueur humain affronte un joueur robotisé. Le but est de créer une ligne de cinq cubes avec sa marque (`X` pour le joueur humain) sur un plateau de 5x5.
 
 ## Prérequis
-1. **Python** (version 3.7 ou plus récente)
-2. **Bibliothèques Python** :
-   - `requests` pour communiquer avec le serveur de jeu
+- **Python** (version 3.7 ou plus récente)
+- **Bibliothèques Python** :
+  - `requests` pour communiquer avec le serveur de jeu
 
 ## Installation
 
@@ -19,17 +19,7 @@ Ce projet implémente une version automatisée du jeu **Quixo**, où le joueur h
 pip install requests
 
 git add main.py quixo.py api.py
-
-git push origin main
-
-git bundle create quixo_project.bundle --all
-
-
-Code du Projet
-main.py
-python
-Copier le code
-from quixo import formater_le_jeu, choisir_un_coup, interpréter_la_commande
+git commit -m ""[Uplfrom quixo import formater_le_jeu, choisir_un_coup, interpréter_la_commande
 from api import initialiser_partie, jouer_un_coup
 
 if __name__ == "__main__":
@@ -56,10 +46,8 @@ if __name__ == "__main__":
         print(f"Erreur de jeu : {e}")
     except ConnectionError as e:
         print(f"Erreur de connexion : {e}")
-quixo.py
-python
-Copier le code
 import argparse
+
 
 def formater_entete(joueurs):
     return f"Légende:\n   X={joueurs[0]}\n   O={joueurs[1]}"
@@ -89,9 +77,6 @@ def interpréter_la_commande():
     parser = argparse.ArgumentParser(description="Quixo")
     parser.add_argument("idul", help="IDUL du joueur")
     return parser.parse_args()
-api.py
-python
-Copier le code
 import requests
 
 def initialiser_partie(idul, secret):
@@ -120,13 +105,17 @@ def jouer_un_coup(id_partie, origine, direction, idul, secret):
     elif response.status_code == 406:
         raise RuntimeError(response.json()['message'])
     else:
-        raise ConnectionError("Erreur de connexion.")
+        raise ConnectionError("Erreur de connexion.")oading main.py…]()
+
+
+        git push origin main
+
+
+
+git bundle create quixo_project.bundle --all
 
 
 
 
-
-
-
-
+        
 
